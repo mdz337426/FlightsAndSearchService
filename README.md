@@ -7,7 +7,7 @@
     - Create a `.env` file in the root directory and add the following environment variables 
             - 'PORT = 3000'
     - Inside the `src/config` folder,  create a new file `config.json' and then add the following json objects
-    ```
+    ...
     {
         "development": {
         "username": <Your DB login name>,
@@ -17,5 +17,4 @@
         "dialect": "mysql"
         }
     }
-
-    ```
+    ...
