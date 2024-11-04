@@ -20,4 +20,5 @@
     }
 ```
 - Once you have added yout db config as listed above, go to the src folder from your terminal and execute `npx sequelize db:create`
- 
+
+ #Flights table
