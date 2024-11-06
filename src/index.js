@@ -15,6 +15,4 @@ const setUpAndStartServer = async() => {
         repo.createCity({name:"kolkata"});
     });  
 }
- 
-
 setUpAndStartServer();
