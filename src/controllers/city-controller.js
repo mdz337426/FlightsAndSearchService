@@ -1,18 +1,19 @@
 const { CityService } = require('../services/index');
 
-const create = (req, res)=>{
+const create =async (req, res)=>{
+
 
 }
 
-const read = (req, res)=>{
+const read =async (req, res)=>{
 
 }
 
-const update = (req, res)=>{
+const update =async (req, res)=>{
 
 }
 
-const destroy = (req, res)=>{
+const destroy =async (req, res)=>{
 
 }
 
