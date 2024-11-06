@@ -1,12 +1,11 @@
 const { CityService } = require('../services/index');
-
-const CityService  =new CityService();
+const Cityservice =new CityService();
 
 //post method
 const create =async (req, res)=>{
 
     try {
-        const city = await CityService.createCity(req.body);
+        const city = await Cityservice.createCity(req.body);
         return res.status(201).json({
             data:city,
             success: true,
@@ -16,7 +15,7 @@ const create =async (req, res)=>{
     } catch (error) {
         console.log(error);
         return res.status(500).json({
-            data: city,
+            data: req.body,
             success: false,
             message: "not able to create city",
             err: error
@@ -29,7 +28,7 @@ const create =async (req, res)=>{
 const read =async (req, res)=>{
 
     try {
-        const city = await CityService.getCity(req.params.id);
+        const city = await Cityservice.getCity(req.params.id);
         return res.status(201).json({
             dtat:city,
             success: true,
@@ -57,7 +56,7 @@ const read =async (req, res)=>{
 const update =async (req, res)=>{
 
     try {
-        const city = await CityService.updateCity(req.body, req.params.id);
+        const city = await Cityservice.updateCity(req.body, req.params.id);
         return res.status(201).json({
             dtat:city,
             success: true,
@@ -83,7 +82,7 @@ const update =async (req, res)=>{
 
 const destroy =async (req, res)=>{
     try {
-        const city = await CityService.removeCity(req.params.id);
+        const city = await Cityservice.removeCity(req.params.id);
         return res.status(201).json({
             dtat:city,
             success: true,
