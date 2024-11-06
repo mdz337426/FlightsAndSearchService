@@ -1,7 +1,16 @@
-const { CityService } = require('../services/index');
+const { CityService, CityService } = require('../services/index');
 
+const CityService  = CityService();
+
+//post method
 const create =async (req, res)=>{
 
+    try {
+        
+        
+    } catch (error) {
+        
+    }
 
 }
 
