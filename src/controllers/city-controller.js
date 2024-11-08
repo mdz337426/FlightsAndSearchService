@@ -117,6 +117,30 @@ const destroy =async (req, res)=>{
 
 }
 
+
+const getall = async (req, res)=>{
+    try {
+        const cities = await Cityservice.getAllCities();
+        return res.status(200).json({
+            dtat:city,
+            success: true,
+            message : 'successfully deleted the city',
+            err: {}
+        })
+
+        
+    } catch (error) {
+
+        console.log(error);
+        return res.status(500).json({
+            data: city,
+            success: false,
+            message: "not able to fetch cities",
+            err: error
+        });
+    }
+}
+
 module.exports ={
     create,
     read, 
