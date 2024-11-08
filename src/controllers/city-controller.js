@@ -1,10 +1,18 @@
+<<<<<<< HEAD
 const { CityService } = require('../services/index');
 const Cityservice =new CityService();
 
+=======
+const { CityService, CityService } = require('../services/index');
+
+const CityService  = CityService();
+
+>>>>>>> origin/main
 //post method
 const create =async (req, res)=>{
 
     try {
+<<<<<<< HEAD
         const city = await Cityservice.createCity(req.body);
         return res.status(201).json({
             data:city,
@@ -20,6 +28,11 @@ const create =async (req, res)=>{
             message: "not able to create city",
             err: error
         });
+=======
+        
+        
+    } catch (error) {
+>>>>>>> origin/main
         
     }
 
