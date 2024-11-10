@@ -1,6 +1,7 @@
 const { CityService } = require('../services/index');
 const Cityservice =new CityService();
 
+
 //post method
 const create =async (req, res)=>{
     try {
@@ -18,7 +19,17 @@ const create =async (req, res)=>{
             success: false,
             message: "not able to create city",
             err: error
+<<<<<<< HEAD
         });        
+=======
+        });
+=======
+        
+        
+    } catch (error) {
+>>>>>>> origin/main
+        
+>>>>>>> e8e9dbd23fb80697436e088e6518a72ce4daf22e
     }
 
 }
