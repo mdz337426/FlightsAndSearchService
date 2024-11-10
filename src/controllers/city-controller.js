@@ -1,18 +1,9 @@
-<<<<<<< HEAD
 const { CityService } = require('../services/index');
 const Cityservice =new CityService();
 
-=======
-const { CityService, CityService } = require('../services/index');
-
-const CityService  = CityService();
-
->>>>>>> origin/main
 //post method
 const create =async (req, res)=>{
-
     try {
-<<<<<<< HEAD
         const city = await Cityservice.createCity(req.body);
         return res.status(201).json({
             data:city,
@@ -27,13 +18,7 @@ const create =async (req, res)=>{
             success: false,
             message: "not able to create city",
             err: error
-        });
-=======
-        
-        
-    } catch (error) {
->>>>>>> origin/main
-        
+        });        
     }
 
 }
@@ -97,7 +82,7 @@ const destroy =async (req, res)=>{
     try {
         const city = await Cityservice.removeCity(req.params.id);
         return res.status(201).json({
-            dtat:city,
+            data:city,
             success: true,
             message : 'successfully deleted the city',
             err: {}
@@ -120,11 +105,11 @@ const destroy =async (req, res)=>{
 
 const getall = async (req, res)=>{
     try {
-        const cities = await Cityservice.getAllCities();
+        const cities = await Cityservice.getAllCities(req.query);
         return res.status(200).json({
-            dtat:city,
+            dtat:cities,
             success: true,
-            message : 'successfully deleted the city',
+            message : 'successfully fetched the cities',
             err: {}
         })
 
@@ -133,7 +118,7 @@ const getall = async (req, res)=>{
 
         console.log(error);
         return res.status(500).json({
-            data: city,
+            data: req.body,
             success: false,
             message: "not able to fetch cities",
             err: error
@@ -145,5 +130,6 @@ module.exports ={
     create,
     read, 
     update,
-    destroy
+    destroy,
+    getall
 }
