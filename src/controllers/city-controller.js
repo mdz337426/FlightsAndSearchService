@@ -18,9 +18,8 @@ const create =async (req, res)=>{
             data: req.body,
             success: false,
             message: "not able to create city",
-            err: error});        
-    }
-
+            err: {error}});        
+        }
 }
 
 const read =async (req, res)=>{
@@ -121,7 +120,7 @@ const getall = async (req, res)=>{
             data: req.body,
             success: false,
             message: "not able to fetch cities",
-            err: error
+            err: { error}
         });
     }
 }
