@@ -28,12 +28,13 @@ class AirportRepository{
         {
             try {
 
-                const airport = await Airport.update({
+                const airport = await Airport.update(data, {
                     where:{
                         id: airportId
                     }
-                });
-                
+                }, );
+
+                return airport;
             } catch (error) {
                 
                 console.log("something went wrong in the repository layer");
@@ -58,7 +59,7 @@ class AirportRepository{
             }
         }
 
-        async deleteAirport({name, address})
+        async deleteAirport(airportId)
         {
             try {
                 const airport = await Airport.destroy({
@@ -66,9 +67,9 @@ class AirportRepository{
                             id : airportId
                         }
                     });
+                return airport;
                 
             } catch (error) {
-                
                 console.log("something went wrong in the repository layer");
                 throw {error};
             }

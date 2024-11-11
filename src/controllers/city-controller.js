@@ -55,7 +55,7 @@ const update =async (req, res)=>{
     try {
         const city = await Cityservice.updateCity(req.body, req.params.id);
         return res.status(201).json({
-            dtat:city,
+            data:req.body,
             success: true,
             message : 'successfully updated the city',
             err: {}

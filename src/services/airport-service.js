@@ -33,7 +33,6 @@ class AirportService{
         try {
             const airport = await this.AirportRepository.deleteAirport(airportId); 
             return airport;
-            
         } catch (error) {
             console.log("something went wrong in service layer");
             throw {error};
