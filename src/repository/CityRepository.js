@@ -31,7 +31,7 @@ class CityRepository{
 
     async deleteCity(cityid){
         try {
-            const city = City.destroy({
+            const city =await City.destroy({
                 where:{
                     id:cityid
                 }
@@ -61,7 +61,6 @@ class CityRepository{
     async getAllCities(filter)
     {
         try {
-            console.log(filter.name);
             if(filter.name === "")
             {
             const cities = await City.findAll();
