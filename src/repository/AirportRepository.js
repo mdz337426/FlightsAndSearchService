@@ -1,6 +1,5 @@
 const { where } = require('sequelize');
 const { Airport } = require('../models/index');
-const airport = require('../models/airport');
 const {Op} = require('sequelize');
 
 
