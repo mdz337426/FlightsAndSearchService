@@ -1,8 +1,6 @@
 const { where } = require('sequelize');
 const { Airport } = require('../models/index');
-const airport = require('../models/airport');
 const {Op} = require('sequelize');
-
 
 class AirportRepository{
 
@@ -33,7 +31,6 @@ class AirportRepository{
                         id: airportId
                     }
                 }, );
-
                 return airport;
             } catch (error) {
                 
@@ -81,8 +78,7 @@ class AirportRepository{
                 const airports = await Airport.findAll({
                     where:{
                         name:{
-                                [Op.startsWith] : filter.name
-                            }
+                                [Op.startsWith] : filter.name }
                         }
                     });
                     return airports;

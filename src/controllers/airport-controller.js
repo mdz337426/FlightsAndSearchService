@@ -19,7 +19,7 @@ const create =async (req, res)=>{
             data: req.body,
             success: false,
             message: "not able to create airport",
-            err: {error}});        
+            err: error});        
         }
 }
 
@@ -32,10 +32,8 @@ const read =async (req, res)=>{
             success: true,
             message : 'successfully fetched the airport',
             err: {}
-        })
-        
+        })       
     } catch (error) {
-
         console.log(error);
         return res.status(500).json({
             data: airport,
@@ -44,12 +42,7 @@ const read =async (req, res)=>{
             err: error
         });
     }
-   
-
 }
-
-
-
 const update =async (req, res)=>{
 
     try {
@@ -59,9 +52,7 @@ const update =async (req, res)=>{
             success: true,
             message : 'successfully updated the airport',
             err: {}
-        })
-
-        
+        })     
     } catch (error) {
 
         console.log(error);
@@ -72,9 +63,6 @@ const update =async (req, res)=>{
             err: error
         });
     }
-
-
-
 }
 
 const destroy =async (req, res)=>{
@@ -87,7 +75,6 @@ const destroy =async (req, res)=>{
             err: {}
         })
 
-        
     } catch (error) {
 
         console.log(error);
@@ -98,7 +85,6 @@ const destroy =async (req, res)=>{
             err: error
         });
     }
-
 }
 
 
@@ -120,7 +106,7 @@ const getall = async (req, res)=>{
             data: req.body,
             success: false,
             message: "not able to fetch Airports",
-            err: { error}
+            err:  error
         });
     }
 }
