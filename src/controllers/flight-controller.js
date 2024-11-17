@@ -17,6 +17,7 @@ const create =async (req, res)=>{
         return res.status(201).json({
             data : req.body,
             success: 'false',
+<<<<<<< HEAD
             err : error
         })
     }
@@ -36,11 +37,18 @@ const getall = async(req, res)=>{
             data : req.body,
             success: 'false',
             err : error
+=======
+            err : {error}
+>>>>>>> 1604d74cfdf9145224d2817de8fafff9fa5cd892
         })
     }
 }
 
 module.exports = {
+<<<<<<< HEAD
     create,
     getall
+=======
+    create
+>>>>>>> 1604d74cfdf9145224d2817de8fafff9fa5cd892
 }

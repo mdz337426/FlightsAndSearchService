@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const { Model, where } = require('sequelize');
 const { flight } = require('../models/index');
 const {Op} = require('sequelize');
@@ -24,6 +25,13 @@ class flightRepository{
         return filter;
     }
 
+=======
+const { Model } = require('sequelize');
+const { flight } = require('../models/index');
+
+class flightRepository{
+
+>>>>>>> 1604d74cfdf9145224d2817de8fafff9fa5cd892
     async createFlight(data){
         try {
             const Flight = await flight.create(data);
@@ -34,6 +42,7 @@ class flightRepository{
             throw {error};
         }
     }
+<<<<<<< HEAD
     
 
     async getFlight(flightId)
@@ -60,6 +69,10 @@ class flightRepository{
             throw {error};   
         }
     }
+=======
+
+
+>>>>>>> 1604d74cfdf9145224d2817de8fafff9fa5cd892
 }
 
 module.exports = flightRepository;
