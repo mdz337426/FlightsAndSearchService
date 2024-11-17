@@ -18,11 +18,6 @@ router.get('/airport', AirportController.getall);
 router.patch('/airport/:id', AirportController.update);
 
 router.post('/flight', FlightController.create);
-<<<<<<< HEAD
 router.get('/flight', FlightController.getall);
-=======
-
->>>>>>> 1604d74cfdf9145224d2817de8fafff9fa5cd892
-
 module.exports = router;
 
