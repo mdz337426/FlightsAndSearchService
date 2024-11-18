@@ -6,7 +6,7 @@ const Airportservice = new AirportService();
 //post method
 const create =async (req, res)=>{
     try {
-        const airport = await Airportservice.createAirport(req.body);
+        const airport = await Airportservice.create(req.body);
         return res.status(201).json({
             data:airport,
             success: true,
@@ -26,9 +26,9 @@ const create =async (req, res)=>{
 const read =async (req, res)=>{
 
     try {
-        const airport = await Airportservice.getAirport(req.params.id);
+        const airport = await Airportservice.get(req.params.id);
         return res.status(201).json({
-            dtat:airport,
+            data:airport,
             success: true,
             message : 'successfully fetched the airport',
             err: {}
@@ -46,7 +46,7 @@ const read =async (req, res)=>{
 const update =async (req, res)=>{
 
     try {
-        const airport = await Airportservice.updateAirport(req.body, req.params.id);
+        const airport = await Airportservice.update(req.body, req.params.id);
         return res.status(201).json({
             data:airport,
             success: true,
@@ -67,7 +67,7 @@ const update =async (req, res)=>{
 
 const destroy =async (req, res)=>{
     try {
-        const airport = await Airportservice.removeAirport(req.params.id);
+        const airport = await Airportservice.destroy(req.params.id);
         return res.status(201).json({
             data:airport,
             success: true,
@@ -90,7 +90,7 @@ const destroy =async (req, res)=>{
 
 const getall = async (req, res)=>{
     try {
-        const airports = await Airportservice.getAllAirports(req.query);
+        const airports = await Airportservice.getAll(req.query);
         return res.status(200).json({
             data:airports,
             success: true,

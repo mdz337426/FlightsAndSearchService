@@ -4,10 +4,10 @@ const flightService = new FlightService();
 
 const create =async (req, res)=>{
     try {
-        const flight = await flightService.createFlight(req.body);
+        const flight = await flightService.create(req.body);
         return res.status(201).json({
             data : flight,
-            success : 'true',
+            success : 'successfully created the flight',
             err: {}
         });
         
@@ -24,7 +24,7 @@ const create =async (req, res)=>{
 
 const getall = async(req, res)=>{
     try {
-        const flights = await flightService.getAllFlights(req.query);
+        const flights = await flightService.getAll(req.query);
         return res.status(201).json({
             data : flights,
             success : 'true',

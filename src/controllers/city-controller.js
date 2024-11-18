@@ -5,7 +5,7 @@ const Cityservice =new CityService();
 //post method
 const create =async (req, res)=>{
     try {
-        const city = await Cityservice.createCity(req.body);
+        const city = await Cityservice.create(req.body);
         return res.status(201).json({
             data:city,
             success: true,
@@ -25,7 +25,7 @@ const create =async (req, res)=>{
 const read =async (req, res)=>{
 
     try {
-        const city = await Cityservice.getCity(req.params.id);
+        const city = await Cityservice.get(req.params.id);
         return res.status(201).json({
             dtat:city,
             success: true,
@@ -53,7 +53,7 @@ const read =async (req, res)=>{
 const update =async (req, res)=>{
 
     try {
-        const city = await Cityservice.updateCity(req.body, req.params.id);
+        const city = await Cityservice.update(req.body, req.params.id);
         return res.status(201).json({
             data:req.body,
             success: true,
@@ -79,7 +79,7 @@ const update =async (req, res)=>{
 
 const destroy =async (req, res)=>{
     try {
-        const city = await Cityservice.removeCity(req.params.id);
+        const city = await Cityservice.destroy(req.params.id);
         return res.status(201).json({
             data:city,
             success: true,
@@ -104,7 +104,7 @@ const destroy =async (req, res)=>{
 
 const getall = async (req, res)=>{
     try {
-        const cities = await Cityservice.getAllCities(req.query);
+        const cities = await Cityservice.getAll(req.query);
         return res.status(200).json({
             dtat:cities,
             success: true,
